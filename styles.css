@@ -1,0 +1,50 @@
+html{
+    background-color: black;
+}
+
+h1{
+    color:pink;
+    text-align:center;
+    font-size:70pt;
+    font-family: "Love Light", serif;
+    transition: opacity 1s ease-in-out;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+    flex-direction: column;
+}
+#readyButton {
+    display: none; 
+    padding: 10px 20px;
+    font-size: 40px;
+    background-color: pink;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position:relative;
+    transition: background-color 1s ease-in-out, color 0.3s ease-in-out;
+    align-items:center;
+}
+
+#readyButton:hover {
+    background-color: hotpink;
+    color: white;
+}
+.github-btn{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.github-btn:hover {
+    color: magenta;
+}

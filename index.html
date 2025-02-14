@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Jost:ital,wght@0,100..900;1,100..900&family=Love+Light&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+        <title>Happy Valentine marmar</title>
+    </head>
+    <body>
+        <h1 id="marmar">Welcome Honey</h1>
+    <button id="readyButton" onclick = "playMessage(this)">Ready?</button>
+
+    </body>
+<script src="animate-heart-canvas-browser.js?v=20230222171908"></script>
+<script>
+    let queryData = getSearchData()
+    console.log(queryData)
+    let animateHeartCanvas = new AnimateHeartCanvas(
+        Number(queryData.hMin),
+        Number(queryData.hMax),
+        Number(queryData.countHeart),
+        Number(queryData.sizeMin),
+        Number(queryData.sizeMax),
+        queryData.bgColor,
+    )
+    function getSearchData(){
+        let searchString = location.search;
+        if (searchString){
+            let obj = {};
+            searchString = searchString.substring(1, searchString.length);
+            let tempArray = searchString.split('&');
+            tempArray.forEach(item => {
+                obj[item.split('=')[0]] = decodeURIComponent(item.split('=')[1]);
+            });
+            return obj;
+        } else {
+            return false;
+        }
+    }
+</script>
+<script src = "./index.js"></script>
+</html>
